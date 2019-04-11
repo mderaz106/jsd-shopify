@@ -1,4 +1,4 @@
-package com.test.ac;
+package com.robocat.shopify.jsdintegration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

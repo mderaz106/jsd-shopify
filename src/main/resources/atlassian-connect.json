@@ -5,10 +5,10 @@
   "description": "An app that enables the integration between Shopify and Jira service desk",
   "vendor": {
     "name": "Robocat",
-    "url": "https://robocat-shopify.herokuapp.com"
+    "url": "https://jsd-shopify.herokuapp.com"
   },
   "links": {
-    "self": "https://robocat-shopify.herokuapp.com/connect/jira/atlassian-connect.json"
+    "self": "https://jsd-shopify.herokuapp.com/jira/connect/atlassian-connect.json"
   },
   "authentication": {
     "type": "jwt"
