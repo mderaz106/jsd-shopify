@@ -1,0 +1,34 @@
+{
+  "name": "jsd-shopify-integration",
+  "version": "1.0.0",
+  "description": "JSD Shopify integration",
+  "main": "src/main/resources/js/index.js",
+  "scripts": {
+    "watch": "webpack --watch -d",
+    "prebuild": "npm install",
+    "build": "webpack -d"
+  },
+  "author": "Mostafa Draz",
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^2.1.1",
+    "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}

@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="https://connect-cdn.atl-paas.net/all.js"></script>
+    <script th:src="@{${atlassianConnectAllJsUrl}}" type="text/javascript"></script>
     <title>Shopify JSD Integration</title>
 </head>
 <body>
 <section id="app"></section>
+<script th:src="@{'/js/bundle.js'}"></script>
 </body>
 </html>
