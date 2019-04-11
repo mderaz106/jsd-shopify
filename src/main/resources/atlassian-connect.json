@@ -7,9 +7,6 @@
     "name": "Robocat",
     "url": "https://jsd-shopify.herokuapp.com"
   },
-  "links": {
-    "self": "https://jsd-shopify.herokuapp.com/jira/connect/atlassian-connect.json"
-  },
   "authentication": {
     "type": "jwt"
   },
