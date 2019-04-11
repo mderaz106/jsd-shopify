@@ -11,7 +11,9 @@ addon:
   base-url: https://robocat-shopify.herokuapp.com
 
 logging.level.com.atlassian.connect.spring: DEBUG
-
+atlassian:
+  connect:
+    redirect-root-to-descriptor: false
 ---
 spring:
   profiles: production
