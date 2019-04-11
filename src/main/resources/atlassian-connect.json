@@ -1,0 +1,52 @@
+{
+  "key": "${addon.key}",
+  "baseUrl": "${addon.base-url}",
+  "name": "Shopify and Jira service desk integration",
+  "description": "An app that enables the integration between Shopify and Jira service desk",
+  "vendor": {
+    "name": "Robocat",
+    "url": "https://robocat-shopify.herokuapp.com"
+  },
+  "links": {
+    "self": "https://robocat-shopify.herokuapp.com/connect/jira/atlassian-connect.json"
+  },
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed",
+    "uninstalled": "/uninstalled"
+  },
+  "scopes": [
+    "read",
+    "write"
+  ],
+  "apiMigrations": {
+    "gdpr": true
+  },
+  "modules": {
+    "jiraIssueGlances": [
+      {
+        "icon": {
+          "width": 0,
+          "height": 0,
+          "url": "/images/shopify_icon.png"
+        },
+        "content": {
+          "type": "label",
+          "label": {
+            "value": "my label"
+          }
+        },
+        "target": {
+          "type": "web_panel",
+          "url": "/panel_url"
+        },
+        "name": {
+          "value": "My Issue Glance "
+        },
+        "key": "my-issue-glance"
+      }
+    ]
+  }
+}

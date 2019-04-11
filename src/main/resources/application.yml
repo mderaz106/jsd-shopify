@@ -1,0 +1,29 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+addon:
+  key: com.robocat.shopify.jsd-integration
+  base-url: https://robocat-shopify.herokuapp.com
+
+logging.level.com.atlassian.connect.spring: DEBUG
+
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+addon:
+  key: com.robocat.shopify.jsd-integration
+  base-url: https://robocat-shopify.herokuapp.com
+
