@@ -10,7 +10,7 @@ spring:
     enabled: true
 addon:
   key: com.robocat.shopify.jsd-integration
-  base-url: https://jsd-shopify.herokuapp.com/jira/connect
+  base-url:  http://localhost:${local.server.port}
 logging.level.com.atlassian.connect.spring: DEBUG
 atlassian:
   connect:
@@ -27,6 +27,6 @@ spring:
     hikari:
       maximum-pool-size: 10
 addon:
-  key: com.robocat.shopify.jsd-integration
-  base-url:  http://localhost:${local.server.port}
+  base-url: https://jsd-shopify.herokuapp.com/jira/connect
+
 
