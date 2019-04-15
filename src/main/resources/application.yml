@@ -12,9 +12,15 @@ addon:
   key: com.robocat.shopify.jsd-integration
   base-url:  http://localhost:${local.server.port}
 logging.level.com.atlassian.connect.spring: DEBUG
+logging.level.retrofit2.OkHttpCall: DEBUG
 atlassian:
   connect:
     redirect-root-to-descriptor: false
+
+shopify:
+  baseUrl: https://robocat.myshopify.com/admin/api/2019-04/
+  apiKey: c801133432c5ffeabd0577b286ad8df3
+  apiPassword: 97057d1c385e4bb55c639abe3b224d1c
 ---
 spring:
   profiles: production

@@ -32,15 +32,15 @@
         "content": {
           "type": "label",
           "label": {
-            "value": "my label"
+            "value": "View shopify user details"
           }
         },
         "target": {
           "type": "web_panel",
-          "url": "/panel_url"
+          "url": "/jira/connect/iframe?issueId={issue.id}"
         },
         "name": {
-          "value": "My Issue Glance "
+          "value": "Shopify information"
         },
         "key": "my-issue-glance"
       }
