@@ -7,7 +7,7 @@ spring:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb
   thymeleaf:
-    enabled: true
+    cache: false
 addon:
   key: com.robocat.shopify.jsd-integration
   base-url:  http://localhost:${local.server.port}
@@ -21,8 +21,13 @@ shopify:
   baseUrl: https://robocat.myshopify.com/admin/api/2019-04/
   apiKey: c801133432c5ffeabd0577b286ad8df3
   apiPassword: 97057d1c385e4bb55c639abe3b224d1c
+
+
 ---
+
 spring:
+  thymeleaf:
+    cache: true
   profiles: production
   jpa:
     hibernate:
@@ -32,6 +37,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
+
 addon:
   base-url: https://jsd-shopify.herokuapp.com
 

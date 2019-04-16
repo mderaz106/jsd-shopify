@@ -16,7 +16,8 @@ public class JiraApiService {
     }
 
     public String getJiraIssueReporter(Long issueId) {
-        ResponseEntity<JiraIssue> responseEntity = atlassianHostRestClients.authenticatedAsAddon()
+        ResponseEntity<JiraIssue> responseEntity = atlassianHostRestClients
+                .authenticatedAsAddon()
                 .getForEntity("/rest/api/3/issue/{issueId}?fields=reporter",
                         JiraIssue.class,
                         issueId);

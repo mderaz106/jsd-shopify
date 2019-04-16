@@ -1,6 +1,5 @@
 package com.robocat.shopify.jsdintegration.jira.controller;
 
-import com.atlassian.connect.spring.IgnoreJwt;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IframeController {
 
     @GetMapping("/iframe")
-    @IgnoreJwt
     public String getIndex() {
         return "iframe";
     }

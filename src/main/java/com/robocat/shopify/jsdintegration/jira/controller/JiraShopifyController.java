@@ -1,5 +1,6 @@
 package com.robocat.shopify.jsdintegration.jira.controller;
 
+import com.atlassian.connect.spring.IgnoreJwt;
 import com.robocat.shopify.jsdintegration.jira.service.JiraApiService;
 import com.robocat.shopify.jsdintegration.shopify.api.ShopifyApiService;
 import com.robocat.shopify.jsdintegration.shopify.dto.ShopifyCustomer;
