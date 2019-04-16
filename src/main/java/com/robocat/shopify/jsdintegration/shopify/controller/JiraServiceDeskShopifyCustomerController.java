@@ -1,6 +1,5 @@
 package com.robocat.shopify.jsdintegration.shopify.controller;
 
-import com.atlassian.connect.spring.AtlassianHostUser;
 import com.atlassian.connect.spring.IgnoreJwt;
 import com.robocat.shopify.jsdintegration.shopify.api.ShopifyApiService;
 import com.robocat.shopify.jsdintegration.shopify.dto.ShopifyCustomer;
@@ -24,8 +23,7 @@ public class JiraServiceDeskShopifyCustomerController {
     @GetMapping
     @IgnoreJwt
     public ShopifyCustomer getShopifyCustomerInformation(@RequestParam String email) throws IOException {
-        return shopifyApiService.getShopifyCustomerWithOrders(email).orElseThrow(CustomerNotFoundException::new);
+        return shopifyApiService.getShopifyCustomerWithOrders(email).orElseThrow(() -> new CustomerNotFoundException("Customer not found!"));
     }
-
 
 }

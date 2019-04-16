@@ -1,18 +1,19 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     database-platform: org.hibernate.dialect.H2Dialect
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:./database.db;DB_CLOSE_ON_EXIT=FALSE
   thymeleaf:
     cache: false
 addon:
   key: com.robocat.shopify.jsd-integration
-  base-url:  http://localhost:${local.server.port}
+  base-url:  https://mderaz.au.ngrok.io
 logging.level.com.atlassian.connect.spring: DEBUG
 logging.level.retrofit2.OkHttpCall: DEBUG
+logging.level.org.apache.http: DEBUG
 atlassian:
   connect:
     redirect-root-to-descriptor: false

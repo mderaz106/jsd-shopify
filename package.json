@@ -17,6 +17,10 @@
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
+    "@atlaskit/button": "latest",
+    "@atlaskit/css-reset": "latest",
+    "@atlaskit/reduced-ui-pack": "latest",
+    "@atlaskit/page": "latest",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

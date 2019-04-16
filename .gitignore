@@ -1,7 +1,8 @@
 HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-
+database.db.mv.db
+database.db.trace.db
 ### STS ###
 .apt_generated
 .classpath

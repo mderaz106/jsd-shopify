@@ -1,6 +1,5 @@
 package com.robocat.shopify.jsdintegration.jira.controller;
 
-import com.atlassian.connect.spring.IgnoreJwt;
 import com.robocat.shopify.jsdintegration.jira.service.JiraApiService;
 import com.robocat.shopify.jsdintegration.shopify.api.ShopifyApiService;
 import com.robocat.shopify.jsdintegration.shopify.dto.ShopifyCustomer;
@@ -28,7 +27,8 @@ public class JiraShopifyController {
     @GetMapping("/reporter/shopify-details")
     public ShopifyCustomer getJsdShopifyCustomerDetails(@RequestParam Long issueId) throws IOException {
         String reporterEmail = jiraApiService.getJiraIssueReporter(issueId);
-        return shopifyApiService.getShopifyCustomerWithOrders(reporterEmail).orElseThrow(CustomerNotFoundException::new);
+        return shopifyApiService.getShopifyCustomerWithOrders(reporterEmail)
+                .orElseThrow(() -> new CustomerNotFoundException("Customer not found!"));
     }
 
 }
