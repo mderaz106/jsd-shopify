@@ -21,6 +21,8 @@
     "@atlaskit/css-reset": "latest",
     "@atlaskit/reduced-ui-pack": "latest",
     "@atlaskit/page": "latest",
+    "@atlaskit/badge": "latest",
+    "@atlaskit/lozenge": "latest",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
