@@ -17,7 +17,7 @@ logging.level.org.apache.http: DEBUG
 atlassian:
   connect:
     redirect-root-to-descriptor: false
-
+    allow-reinstall-missing-host: true
 shopify:
   baseUrl: https://robocat.myshopify.com/admin/api/2019-04/
   apiKey: c801133432c5ffeabd0577b286ad8df3
