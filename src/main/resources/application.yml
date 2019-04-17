@@ -38,6 +38,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
+logging.level.com.atlassian.connect.spring: DEBUG
 
 addon:
   base-url: https://jsd-shopify.herokuapp.com
