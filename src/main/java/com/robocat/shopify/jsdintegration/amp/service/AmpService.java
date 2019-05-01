@@ -22,11 +22,11 @@ public class AmpService {
                 .postForEntity("https://jsdshopify.atlassian.net/rest/api/3/issue/{issueIdOrKey}/comment",
                         new JiraIssueComment(
                                 new JiraIssueCommentBody(
-                                        new JiraIssueCommentBody.BodyContent(
+                                        Collections.singletonList(new JiraIssueCommentBody.BodyContent(
                                                 Collections.singletonList(
                                                         new JiraIssueCommentBody.Content(comment)
                                                 )
-                                        )
+                                        ))
                                 ),
                                 true
                         ),

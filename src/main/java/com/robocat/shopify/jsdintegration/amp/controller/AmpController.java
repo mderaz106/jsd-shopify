@@ -4,7 +4,6 @@ import com.atlassian.connect.spring.IgnoreJwt;
 import com.robocat.shopify.jsdintegration.amp.service.AmpService;
 import org.springframework.http.MediaType;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,12 +17,11 @@ public class AmpController {
         this.ampService = ampService;
     }
 
-    @PostMapping(value = "/jira/issue/{issueKeyOrId}/comment",
+    @PostMapping(value = "/jira/issue/comment",
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @IgnoreJwt
-    public void addCommentToJiraIssue(@PathVariable String issueKeyOrId,
-                                      @RequestBody MultiValueMap<String, String> formData) {
-        ampService.postCommentToJiraIssue(issueKeyOrId, formData.getFirst("comment"));
+    public void addCommentToJiraIssue(@RequestBody MultiValueMap<String, String> formData) {
+        ampService.postCommentToJiraIssue(formData.getFirst("issueId"), formData.getFirst("comment"));
     }
 
 }

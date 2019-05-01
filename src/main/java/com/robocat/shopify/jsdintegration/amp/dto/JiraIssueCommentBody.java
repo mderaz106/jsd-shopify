@@ -8,9 +8,9 @@ import java.util.List;
 public class JiraIssueCommentBody {
     private int version = 1;
     private String type = "doc";
-    private BodyContent content;
+    private List<BodyContent> content;
 
-    public JiraIssueCommentBody(BodyContent content) {
+    public JiraIssueCommentBody(List<BodyContent> content) {
         this.content = content;
     }
 
