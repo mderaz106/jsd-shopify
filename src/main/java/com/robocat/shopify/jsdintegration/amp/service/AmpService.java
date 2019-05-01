@@ -3,9 +3,11 @@ package com.robocat.shopify.jsdintegration.amp.service;
 import com.atlassian.connect.spring.AtlassianHostRestClients;
 import com.robocat.shopify.jsdintegration.amp.dto.JiraIssueComment;
 import com.robocat.shopify.jsdintegration.amp.dto.JiraIssueCommentBody;
+import com.robocat.shopify.jsdintegration.amp.dto.JiraIssueCommentsResult;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
 
 @Service
 public class AmpService {
@@ -16,7 +18,7 @@ public class AmpService {
         this.atlassianHostRestClients = atlassianHostRestClients;
     }
 
-    public void postCommentToJiraIssue(String issueId, String comment) {
+    public List<JiraIssueComment> postCommentToJiraIssue(String issueId, String comment) {
         atlassianHostRestClients
                 .authenticatedAsAddon()
                 .postForEntity("https://jsdshopify.atlassian.net/rest/api/3/issue/{issueIdOrKey}/comment",
@@ -33,5 +35,17 @@ public class AmpService {
                         Void.class,
                         issueId
                 );
+        return getCommentsFromJira(issueId);
     }
+
+    public List<JiraIssueComment> getCommentsFromJira(String issueIdOrKey) {
+        return atlassianHostRestClients
+                .authenticatedAsAddon()
+                .getForEntity(
+                        "https://jsdshopify.atlassian.net/rest/api/3/issue/{issueIdOrKey}/comment",
+                        JiraIssueCommentsResult.class,
+                        issueIdOrKey
+                ).getBody().getComments();
+    }
+
 }
