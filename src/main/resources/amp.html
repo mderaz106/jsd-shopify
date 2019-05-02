@@ -36,15 +36,82 @@
            value="Add comment to issue">
     <div submit-success>
         <template type="amp-mustache">
-            Success! Comment added successfully :D
-        </template>
-    </div>
-    <div submit-error>
-        <template type="amp-mustache">
-            Error! Thanks {{name}} for trying the
-            <code>amp-form</code> demo with an error response.
+            <h3>Comments:</h3>
+            <ul>
+                {{#comments}}
+                    <li>
+                        <b>
+                            {{#body.content}}
+                                {{#content}}
+                                    {{text}}
+                                {{/content}}
+                            {{/body.content}}
+                        </b>
+                    </li>
+                {{/comments}}
+            </ul>
         </template>
     </div>
 </form>
+</body>
+</html>
+
+<!doctype html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <title>amp-list</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <!-- ## Setup -->
+    <!-- Import the `amp-list` component ... -->
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <!-- ... and the `amp-mustache` component in the header. -->
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <!-- Import the `amp-bind` component for dynamically changing the content of an `amp-list`. -->
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-list/index.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+</head>
+<body>
+
+<amp-state id="items">
+    <script type="application/json">
+        {
+
+        }
+    </script>
+</amp-state>
+
+
+<amp-list layout="fixed-height" height="100"
+          src="https://safe-reaches-86672.herokuapp.com/jira/amp/comment/123">
+    <template type="amp-mustache">
+        <div>{{authorName}} A Hello</div>
+    </template>
+</amp-list>
+
+<p [text]="'Thanks, ' + comments[0]['authorName'] +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
+<form method="post"
+      action-xhr="https://safe-reaches-86672.herokuapp.com/jira/amp/comment?issueKey=123"
+      target="_top"
+      on="submit-success: AMP.setState({'comments': event.response.items})">
+    <div>
+
+    </div>
+    <input type="submit" value="Subscribe">
+</form>
+
+<div>
+    <template type="amp-mustache" id="amp-template-id">
+        <div><a href="{{url}}">{{title}}</a></div>
+    </template>
+    <amp-list layout="fixed-height" height="100"
+              src="/static/samples/json/examples.json"
+              template="amp-template-id">
+    </amp-list>
+</div>
 </body>
 </html>
